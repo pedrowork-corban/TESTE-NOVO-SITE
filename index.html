@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>MAIS BB Consórcios | Martinelle & Avelar – Correspondente Banco do Brasil</title>
+  <meta name="description" content="Consórcios de imóveis, veículos, máquinas agrícolas e serviços. 17 anos de mercado, correspondente autorizado Banco do Brasil. Simule grátis!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero"><img src="logo.png" alt="MAIS BB Consórcios"></a>
+  <ul class="nav-links">
+    <li><a href="#hero">Início</a></li>
+    <li><a href="#sobre">Sobre nós</a></li>
+    <li><a href="#fachada-section">Nossa sede</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a onclick="openContactModal()">Contatos</a></li>
+    <li><a class="nav-cta" href="#hero" onclick="focusHeroForm(event)">Fazer simulação</a></li>
+  </ul>
+  <div class="hamburger" id="ham" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mob-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#hero" onclick="closeMobileMenu()">Início</a>
+  <a href="#sobre" onclick="closeMobileMenu()">Sobre nós</a>
+  <a href="#fachada-section" onclick="closeMobileMenu()">Nossa sede</a>
+  <a href="#servicos" onclick="closeMobileMenu()">Serviços</a>
+  <a onclick="closeMobileMenu();openContactModal()">Contatos</a>
+  <a class="mob-cta" href="#hero" onclick="closeMobileMenu();focusHeroForm(event)">Fazer Simulação</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"><img src="hero-bg.png" alt=""><div></div></div>
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Correspondente Autorizado Banco do Brasil</div>
+      <h1 class="hero-title">
+        Sonhar é bom.<br><em>Realizar é mais ainda.</em><br>
+        Descubra o consórcio ideal para você.
+      </h1>
+      <p class="hero-sub">Simule seu consórcio em segundos. Escolha a categoria, defina o valor e receba uma proposta personalizada — com transparência, segurança e 100% online.</p>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="ti">🔐</span> 100% Seguro</div>
+        <div class="trust-item"><span class="ti">⚡</span> Resposta Rápida</div>
+        <div class="trust-item"><span class="ti">🏆</span> 17 Anos de Mercado</div>
+        <div class="trust-item"><span class="ti">✓</span> Sem Juros</div>
+      </div>
+    </div>
+
+    <!-- SIMULATION CARD -->
+    <div class="sim-card">
+      <div class="sim-card-title">Simule seu consórcio grátis</div>
+      <div class="sim-card-sub">Escolha a categoria, defina o valor e clique em simular.</div>
+
+      <div class="sim-tabs">
+        <div class="sim-tab active" data-cat="Imóvel"><span class="tab-icon">🏠</span>Imóvel</div>
+        <div class="sim-tab" data-cat="Veículos"><span class="tab-icon">🚗</span>Veículos</div>
+        <div class="sim-tab" data-cat="Serviços"><span class="tab-icon">💡</span>Serviços</div>
+      </div>
+
+      <div class="sim-toggle">
+        <button class="sim-toggle-btn" data-mode="parcela">Parcela</button>
+        <button class="sim-toggle-btn active" data-mode="credito">Crédito</button>
+      </div>
+
+      <div class="sim-slider-wrap">
+        <div class="sim-slider-label">
+          <span>Valor desejado</span>
+        </div>
+        <div class="sim-slider-value" id="sliderValue">R$ 500.000</div>
+        <input type="range" class="sim-slider" id="simSlider" min="50000" max="1000000" step="10000" value="500000">
+        <div class="sim-range-labels">
+          <span id="sliderMin">R$ 50.000</span>
+          <span id="sliderMax">R$ 1.000.000</span>
+        </div>
+      </div>
+
+      <button class="btn-simular" onclick="openSimModal()">🚀 SIMULAR AGORA</button>
+      <div class="form-sec">🔒 Seus dados estão seguros conosco</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER STRIP -->
+<div class="partner-strip">
+  <div class="pitem"><div class="picon">🏦</div><div><div style="font-size:.67rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Correspondente Credenciado</div><div>Banco do Brasil</div></div></div>
+  <div class="pdiv"></div>
+  <div class="pitem"><div class="picon" style="background:var(--amarelo);color:var(--azul)">✓</div><div><div style="font-size:.67rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Autorizado pelo</div><div>Banco Central do Brasil</div></div></div>
+  <div class="pdiv"></div>
+  <div class="pitem"><div class="picon">🏆</div><div><div style="font-size:.67rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Atuação no Mercado</div><div>Desde 2007</div></div></div>
+  <div class="pdiv"></div>
+  <div class="pitem"><div class="picon" style="background:#059669">💰</div><div><div style="font-size:.67rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Volume Vendido</div><div>+100 milhões</div></div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="sobre">
+  <div class="cont">
+    <div class="about-grid">
+      <div class="anim from-left">
+        <div class="about-card">
+          <div class="av-stat"><div class="av-num counter" data-target="17">0</div><div class="av-lbl">Anos de Experiência</div></div>
+          <div class="av-stat"><div class="av-num">+100<span style="font-size:1.5rem">Mi</span></div><div class="av-lbl">em Consórcios Vendidos</div></div>
+          <div class="av-stat"><div class="av-num">100<span style="font-size:1.35rem">%</span></div><div class="av-lbl">Online e Seguro</div></div>
+        </div>
+      </div>
+      <div class="anim from-right">
+        <span class="s-tag">Sobre a Empresa</span>
+        <h2 class="s-title">Martinelle &amp; Avelar — <span>especialistas</span> em consórcio</h2>
+        <p class="s-desc">A Martinelle &amp; Avelar é especialista em consórcios, com 17 anos de atuação no mercado, ajudando clientes a conquistarem seus objetivos com segurança, planejamento e inteligência financeira.</p>
+        <p class="s-desc" style="margin-top:12px">Somos correspondentes autorizados do Banco do Brasil, operando com alto padrão de conformidade, transparência e profissionalismo.</p>
+        <div class="about-list">
+          <div class="aitem">Imóveis e reforma</div>
+          <div class="aitem">Veículos leves e pesados</div>
+          <div class="aitem">Máquinas agrícolas</div>
+          <div class="aitem">Serviços diversos</div>
+          <div class="aitem">Capital de giro</div>
+          <div class="aitem">Frotas empresariais</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACHADA -->
+<section id="fachada-section">
+  <div class="cont">
+    <div class="fachada-grid">
+      <div class="anim from-left">
+        <div class="fachada-img-wrap">
+          <img src="fachada.jpg" alt="Sede Martinelle & Avelar - Sete Lagoas MG">
+        </div>
+      </div>
+      <div class="fachada-info anim from-right">
+        <span class="s-tag">Nossa Sede</span>
+        <h2 class="s-title">Venha nos <span>visitar</span></h2>
+        <p class="s-desc">Nossa sede está localizada no coração de Sete Lagoas, pronta para receber você com todo o conforto e profissionalismo que você merece.</p>
+        <div class="fachada-address">
+          <div class="fachada-address-icon">📍</div>
+          <div class="fachada-address-text">
+            <strong>Endereço</strong>
+            Rua Dr. Pedro Luiz, 559<br>
+            Centro — Sete Lagoas, MG<br>
+            <span style="font-size:.8rem;color:var(--muted)">Seg a Sex: 8h às 18h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos">
+  <div class="cont">
+    <div class="services-head">
+      <span class="s-tag anim">Nossos serviços</span>
+      <h2 class="s-title anim" style="text-align:center">O consórcio certo para <span>transformar planos em conquistas</span></h2>
+      <p class="s-desc anim">Oferecemos consórcios flexíveis e acessíveis para ajudar você a conquistar bens e serviços de forma segura.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="scard anim d1"><div class="scard-bar"></div><div class="scard-icon">🏠</div><h3>Imóveis</h3><p>Conquiste sua casa própria, invista em imóveis ou reforme sem pagar juros abusivos.</p><button class="btn-scard" onclick="openFormModal('Imóvel')">Simular Grátis</button></div>
+      <div class="scard anim d2"><div class="scard-bar"></div><div class="scard-icon">🚗</div><h3>Veículos</h3><p>Carro, moto, caminhão ou frota — o consórcio é a forma mais econômica de adquirir veículos.</p><button class="btn-scard" onclick="openFormModal('Carro')">Simular Grátis</button></div>
+      <div class="scard anim d3"><div class="scard-bar"></div><div class="scard-icon">🚜</div><h3>Máquinas Agrícolas</h3><p>Renove sua frota de tratores e maquinários sem comprometer o capital de giro.</p><button class="btn-scard" onclick="openFormModal('Máquina Agrícola')">Simular Grátis</button></div>
+      <div class="scard anim d4"><div class="scard-bar"></div><div class="scard-icon">💡</div><h3>Serviços</h3><p>Estudos, cirurgia, viagem ou qualquer serviço — pagando de forma acessível e sem juros.</p><button class="btn-scard" onclick="openFormModal('Serviço')">Simular Grátis</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="como">
+  <div class="cont">
+    <div class="como-head">
+      <span class="s-tag anim">Como funciona</span>
+      <h2 class="s-title anim">4 passos para <em style="color:var(--amarelo);font-style:normal">realizar seu sonho</em></h2>
+      <p class="s-desc anim" style="margin:0 auto">Processo simples, transparente e totalmente acompanhado pela nossa equipe.</p>
+    </div>
+    <div class="steps">
+      <div class="step anim d1"><div class="step-num">1</div><h3>Escolha a modalidade e grupo ideal</h3><p>Encontre o consórcio que melhor se adapta às suas necessidades.</p></div>
+      <div class="step anim d2"><div class="step-num">2</div><h3>Pague parcelas mensais sem juros</h3><p>Contribua com uma parcela acessível, formando um fundo comum.</p></div>
+      <div class="step anim d3"><div class="step-num">3</div><h3>Participe das assembleias</h3><p>Sorteios e lances para aumentar suas chances de contemplação.</p></div>
+      <div class="step anim d4"><div class="step-num">4</div><h3>Seja contemplado e realize seu sonho</h3><p>Receba a carta de crédito para adquirir seu bem ou serviço.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section id="autoridade">
+  <div class="cont">
+    <div class="auth-grid">
+      <div class="anim from-left">
+        <span class="s-tag">Nossos Números</span>
+        <h2 class="s-title">Autoridade e <span>confiança</span> que o mercado reconhece</h2>
+        <p class="s-desc">Mais de 17 anos consolidando resultados e construindo relações de confiança com nossos clientes.</p>
+        <div class="auth-badges">
+          <div class="abadge"><div class="abi">🔐</div>Consórcio simples, prático e seguro</div>
+          <div class="abadge"><div class="abi">🏆</div>Correspondente Credenciado Banco do Brasil</div>
+          <div class="abadge"><div class="abi">🚨</div>+15 anos de Atuação no Mercado Financeiro</div>
+          <div class="abadge"><div class="abi">💰</div>+100 milhões em consórcios vendidos</div>
+        </div>
+        <div style="margin-top:28px"><button class="btn-main" onclick="focusHeroForm()">🚀 Simular meu Consórcio Grátis</button></div>
+      </div>
+      <div class="anim from-right">
+        <div class="stats-4">
+          <div class="stat-c"><div class="si">🏅</div><div class="stat-num"><span class="counter" data-target="17">0</span>+</div><div class="stat-lbl">Anos no Mercado</div></div>
+          <div class="stat-c"><div class="si">👥</div><div class="stat-num">100<span style="font-size:1.1rem">Mi+</span></div><div class="stat-lbl">em Consórcios Vendidos</div></div>
+          <div class="stat-c"><div class="si">🏦</div><div class="stat-num" style="font-size:1.5rem">BB</div><div class="stat-lbl">Correspondente Oficial</div></div>
+          <div class="stat-c"><div class="si">⭐</div><div class="stat-num" style="font-size:1.5rem">100%</div><div class="stat-lbl">Atendimento Personalizado</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="cont">
+    <div class="faq-wrap">
+      <div class="faq-sticky anim from-left">
+        <span class="s-tag">Dúvidas Frequentes</span>
+        <h2 class="s-title">Suas dúvidas <span>respondidas</span></h2>
+        <p class="s-desc">Tire todas as suas dúvidas sobre consórcio. Nossa equipe também está disponível para atendimento personalizado.</p>
+        <div style="margin-top:24px"><button class="btn-main" onclick="openContactModal()">💬 Falar com consultor</button></div>
+      </div>
+      <div class="faq-list anim from-right">
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">O que é o consórcio? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">Consórcio é uma modalidade de compra baseada na união de pessoas em grupos, com o objetivo de formar uma poupança comum para aquisição de bens ou serviços. Administrado por empresas autorizadas e fiscalizadas pelo Banco Central.</div></div></div>
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">O que é contemplação? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">A contemplação é o momento em que o consorciado recebe o direito de utilizar a carta de crédito. Pode ocorrer por sorteio ou por lance.</div></div></div>
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Como poderei ser contemplado? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">Por sorteio mensal nas assembleias ou por lance, quando o consorciado antecipa parcelas para aumentar suas chances.</div></div></div>
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">O que é lance? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">O lance é a antecipação de parcelas ofertada pelo consorciado com o objetivo de ser contemplado mais rapidamente.</div></div></div>
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">É possível usar o FGTS para lance? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">Sim, em consórcios imobiliários é possível utilizar o saldo do FGTS para ofertar lances.</div></div></div>
+        <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Como funciona o sorteio? <span class="fq-arr">▼</span></div><div class="fa-wrap"><div class="fa-inner">O sorteio é realizado mensalmente nas assembleias, garantindo igualdade para todos os participantes do grupo.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="ftl-logo"><img src="logo.png" alt="MAIS BB Consórcios"></div>
+        <p class="ftl-desc">Especialistas em consórcio com 17 anos de mercado. Correspondente autorizado Banco do Brasil, operando com transparência e segurança.</p>
+        <div class="socials">
+          <a class="soc-btn" href="#" title="Instagram">📷</a>
+          <a class="soc-btn" href="#" title="Facebook">📘</a>
+          <a class="soc-btn" href="#" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-head">Contato</div>
+        <div class="fci">📞 <a href="tel:+5531999999999">(31) 99999-9999</a></div>
+        <div class="fci">✉️ <a href="mailto:contato@maisbbconsorcios.com.br">contato@maisbbconsorcios.com.br</a></div>
+        <div class="fci">📍 Rua Dr. Pedro Luiz, 559 — Centro, Sete Lagoas, MG</div>
+      </div>
+      <div>
+        <div class="ft-head">Simule Agora</div>
+        <button class="btn-foot" onclick="focusHeroForm()">🚀 Fazer Simulação Grátis</button>
+        <div class="fci">🕐 Seg a Sex: 8h às 18h</div>
+      </div>
+    </div>
+    <hr class="foot-hr">
+    <div class="foot-bot">
+      <div class="foot-copy">© 2025 Martinelle & Avelar — Correspondente Banco do Brasil. Todos os direitos reservados.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- SIMULATION MODAL -->
+<div class="modal-bg" id="simModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Complete sua simulação</h2>
+      <button class="m-close" onclick="closeSimModal()">✕</button>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <div style="flex:1;background:var(--cinza);padding:10px 14px;border-radius:8px;font-size:.78rem"><strong style="display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px">Categoria</strong><span id="modalCategory">Imóvel</span></div>
+      <div style="flex:1;background:var(--cinza);padding:10px 14px;border-radius:8px;font-size:.78rem"><strong style="display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px">Tipo</strong><span id="modalMode">Valor do crédito</span></div>
+      <div style="flex:1;background:var(--cinza);padding:10px 14px;border-radius:8px;font-size:.78rem"><strong style="display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px">Valor</strong><span id="modalValue" style="color:var(--azul);font-weight:800">R$ 500.000</span></div>
+    </div>
+    <form onsubmit="handleSimSubmit(event)">
+      <div class="fg"><label>Nome completo *</label><input class="fc" id="m_nome" type="text" placeholder="Seu nome completo" required></div>
+      <div class="fg"><label>E-mail *</label><input class="fc" id="m_email" type="email" placeholder="seu@email.com" required></div>
+      <div class="fg"><label>Telefone *</label><input class="fc" id="m_tel" type="tel" placeholder="(31) 99999-9999" required oninput="maskPhone(this)"></div>
+      <div class="fg"><label>Cidade *</label><input class="fc" id="m_cidade" type="text" placeholder="Sua cidade" required></div>
+      <div class="fg">
+        <label>Possui recurso para lance?</label>
+        <select class="fc" id="m_lance">
+          <option value="Não">Não possuo</option>
+          <option value="Sim, até 10%">Sim, até 10%</option>
+          <option value="Sim, até 20%">Sim, até 20%</option>
+          <option value="Sim, até 30%">Sim, até 30%</option>
+          <option value="Sim, acima de 30%">Sim, acima de 30%</option>
+          <option value="FGTS">Quero usar FGTS</option>
+        </select>
+      </div>
+      <button class="btn-enviar" type="submit">✅ ENVIAR SIMULAÇÃO</button>
+      <div class="form-sec">🔒 Seus dados estão seguros conosco</div>
+    </form>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal-bg" id="contactModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Fale conosco</h2>
+      <button class="m-close" onclick="closeContactModal()">✕</button>
+    </div>
+    <div class="clist">
+      <div class="ci"><div class="cci">📞</div><div><div class="ccl">Telefone</div><div class="ccv"><a href="tel:+5531999999999">(31) 99999-9999</a></div></div></div>
+      <div class="ci"><div class="cci">💬</div><div><div class="ccl">WhatsApp</div><div class="ccv"><a href="https://wa.me/5531999999999" target="_blank">(31) 99999-9999</a></div></div></div>
+      <div class="ci"><div class="cci">✉️</div><div><div class="ccl">E-mail</div><div class="ccv"><a href="mailto:contato@maisbbconsorcios.com.br">contato@maisbbconsorcios.com.br</a></div></div></div>
+      <div class="ci"><div class="cci">📍</div><div><div class="ccl">Endereço</div><div class="ccv">Rua Dr. Pedro Luiz, 559 — Centro, Sete Lagoas, MG</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
